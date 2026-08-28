@@ -1,0 +1,158 @@
+{
+  "name": "pypao",
+  "displayName": "PyPao",
+  "description": "Python/IPython utilities including run file in console, start IPython, copy imports, and clean __pycache__. Mimics PyCharm's 'Run File in Python Console' using the VS Code Python extension's selected interpreter/venv.",
+  "version": "0.1.0",
+  "publisher": "local-dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ieachen/vscode-python-pypao"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "icon": "logo.png",
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "python",
+    "ipython",
+    "venv",
+    "virtualenv",
+    "console",
+    "pycharm",
+    "copyImport"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pyPao.runPython",
+        "title": "Run file with 'python'"
+      },
+      {
+        "command": "pyPao.runIpython",
+        "title": "Run file with 'ipython'"
+      },
+      {
+        "command": "pyPao.run",
+        "title": "Run file with 'ipython -i'"
+      },
+      {
+        "command": "pyPao.runMatplotlib",
+        "title": "Run file with 'ipython -i --matplotlib'"
+      },
+      {
+        "command": "pyPao.createIpython",
+        "title": "Create session 'ipython'"
+      },
+      {
+        "command": "pyPao.createIpythonMatplotlib",
+        "title": "Create session 'ipython --matplotlib'"
+      },
+      {
+        "command": "pyPao.copyImport",
+        "title": "Copy import"
+      },
+      {
+        "command": "pyPao.deletePycache",
+        "title": "List and delete __pycache__"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "pyPao",
+          "when": "resourceLangId == python",
+          "group": "navigation@0"
+        }
+      ],
+      "pyPao": [
+        {
+          "command": "pyPao.runPython",
+          "group": "1_run@1"
+        },
+        {
+          "command": "pyPao.runIpython",
+          "group": "1_run@2"
+        },
+        {
+          "command": "pyPao.run",
+          "group": "1_run@3"
+        },
+        {
+          "command": "pyPao.runMatplotlib",
+          "group": "1_run@4"
+        },
+        {
+          "command": "pyPao.createIpython",
+          "group": "1_run@5"
+        },
+        {
+          "command": "pyPao.createIpythonMatplotlib",
+          "group": "1_run@6"
+        },
+        {
+          "command": "pyPao.copyImport",
+          "group": "2_utils@1"
+        },
+        {
+          "command": "pyPao.deletePycache",
+          "group": "2_utils@2"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "pyPao.runPython",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "pyPao.runIpython",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "pyPao.run",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "pyPao.runMatplotlib",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "pyPao.createIpython",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "pyPao.createIpythonMatplotlib",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "pyPao.copyImport",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "pyPao.deletePycache"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "pyPao",
+        "label": "PyPao"
+      }
+    ]
+  },
+  "extensionDependencies": [],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0"
+  }
+}
