@@ -29,28 +29,28 @@
   "contributes": {
     "commands": [
       {
-        "command": "pyPao.runPython",
-        "title": "Run file with 'python'"
-      },
-      {
-        "command": "pyPao.runIpython",
-        "title": "Run file with 'ipython'"
-      },
-      {
-        "command": "pyPao.run",
-        "title": "Run file with 'ipython -i'"
-      },
-      {
-        "command": "pyPao.runMatplotlib",
-        "title": "Run file with 'ipython -i --matplotlib'"
-      },
-      {
         "command": "pyPao.createIpython",
-        "title": "Create session 'ipython'"
+        "title": "New \"ipython\" terminal"
       },
       {
         "command": "pyPao.createIpythonMatplotlib",
-        "title": "Create session 'ipython --matplotlib'"
+        "title": "New \"ipython --matplotlib\" terminal"
+      },
+      {
+        "command": "pyPao.runPython",
+        "title": "\"python\" run file"
+      },
+      {
+        "command": "pyPao.runIpython",
+        "title": "\"ipython\" run file"
+      },
+      {
+        "command": "pyPao.run",
+        "title": "\"ipython -i\" run file"
+      },
+      {
+        "command": "pyPao.runMatplotlib",
+        "title": "\"ipython -i --matplotlib\" run file"
       },
       {
         "command": "pyPao.copyImport",
@@ -71,40 +71,48 @@
       ],
       "pyPao": [
         {
-          "command": "pyPao.runPython",
-          "group": "1_run@1"
-        },
-        {
-          "command": "pyPao.runIpython",
-          "group": "1_run@2"
-        },
-        {
-          "command": "pyPao.run",
-          "group": "1_run@3"
-        },
-        {
-          "command": "pyPao.runMatplotlib",
-          "group": "1_run@4"
-        },
-        {
           "command": "pyPao.createIpython",
-          "group": "1_run@5"
+          "group": "1_session@1"
         },
         {
           "command": "pyPao.createIpythonMatplotlib",
-          "group": "1_run@6"
+          "group": "1_session@2"
+        },
+        {
+          "command": "pyPao.runPython",
+          "group": "2_run@1"
+        },
+        {
+          "command": "pyPao.runIpython",
+          "group": "2_run@2"
+        },
+        {
+          "command": "pyPao.run",
+          "group": "2_run@3"
+        },
+        {
+          "command": "pyPao.runMatplotlib",
+          "group": "2_run@4"
         },
         {
           "command": "pyPao.copyImport",
-          "group": "2_utils@1"
+          "group": "3_utils@1"
         },
         {
           "command": "pyPao.deletePycache",
-          "group": "2_utils@2"
+          "group": "3_utils@2"
         }
       ],
       "commandPalette": [
         {
+          "command": "pyPao.createIpython",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "pyPao.createIpythonMatplotlib",
+          "when": "resourceLangId == python"
+        },
+        {
           "command": "pyPao.runPython",
           "when": "resourceLangId == python"
         },
@@ -118,14 +126,6 @@
         },
         {
           "command": "pyPao.runMatplotlib",
-          "when": "resourceLangId == python"
-        },
-        {
-          "command": "pyPao.createIpython",
-          "when": "resourceLangId == python"
-        },
-        {
-          "command": "pyPao.createIpythonMatplotlib",
           "when": "resourceLangId == python"
         },
         {
